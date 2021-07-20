@@ -352,6 +352,8 @@ border-radius: 2px;
                 $('#datatables_riwayat_obat').DataTable()
                 $('#datatables_pemeriksaan_labaoratorium').DataTable()
                 $('#datatables_pemeriksaan_diagnosa').DataTable()
+                $('#datatables_pemeriksaan_pasien').DataTable()
+                
             })
         </script>
     </body>

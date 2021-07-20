@@ -12,6 +12,7 @@ class Form extends CI_Controller
         $this->load->model('Tbl_form_model');
         $this->load->library('form_validation');
         $this->load->model(['Tbl_ruang_rawat_inap_model']);
+        $this->load->model(['Tbl_pasien_model']);
     }
 
     public function index()
@@ -95,6 +96,34 @@ class Form extends CI_Controller
         echo json_encode($data);
     }
 
+    function autocomplate_data_obat()
+    {
+        $this->db->like('nama_barang', $_GET['term']);
+        $this->db->select('nama_barang');
+        $dataobat = $this->db->get('tbl_obat_alkes_bhp')->result();
+        foreach ($dataobat as $obat) {
+            $return_arr[] = $obat->nama_barang;
+        }
+
+        echo json_encode($return_arr);
+    }
+
+    function autoFillObat()
+    {
+
+        $nama_barang = $_GET['nama_obat'];
+        $this->db->from('tbl_obat_alkes_bhp a');
+        $this->db->join('tbl_satuan_barang b', 'a.id_satuan_barang = b.id_satuan_barang');
+        $this->db->where('nama_barang', $nama_barang);
+        $obat = $this->db->get()->row_array();
+        $data = array(
+            'nama_barang'      =>  $obat['nama_barang'],
+            'id_satuan_barang'   =>  $obat['id_satuan_barang'],
+            'nama_satuan'         =>  $obat['nama_satuan']
+        );
+        echo json_encode($data);
+    }
+
     // function autocomplate_id_diagnosa(){
     //     $this->db->like('id_diagnosa_penyakit', $_GET['term']);
     //     $this->db->select('id_diagnosa_penyakit');
@@ -155,6 +184,9 @@ class Form extends CI_Controller
         $sql_diagnosa_penyakit = "SELECT b.nama_penyakit, a.ciri_ciri_penyakit, a.ciri_ciri_umum, a.keterangan, a.tanggal FROM tbl_riwayat_diagnosa_penyakit a
         JOIN tbl_diagnosa_penyakit b ON a.id_diagnosa_penyakit = b.id_diagnosa_penyakit WHERE no_rawat='$no_rawat'";
 
+        $sql_pemeriksaan_pasien = "SELECT * from tbl_riwayat_pemeriksaan_pasien WHERE no_rawat='$no_rawat'";
+
+        $sql_data_obat = "SELECT * FROM tbl_obat_alkes_bhp";
 
         $data['form'] =  $this->db->query($sql_daftar)->row_array();
         $data['no_rawat'] = $no_rawat;
@@ -163,13 +195,15 @@ class Form extends CI_Controller
         $data['pemberian_obat']             = $this->db->query($sql_obat)->result();
         $data['pemeriksaan_laboratorium']   = $this->db->query($sql_pemeriksaan_laboratorium)->result();
         $data['riwayat_diagnosa_penyakit']          = $this->db->query($sql_diagnosa_penyakit)->result();
+        $data['riwayat_pemeriksaan_pasien']          = $this->db->query($sql_pemeriksaan_pasien)->result();
 
-
+        $data['data_obat']              = $this->db->query($sql_data_obat)->result();
         $data['diagnosa_penyakit']          = $this->db->get('tbl_diagnosa_penyakit')->result();
 
 
         $this->template->load('template', 'form/detail', $data);
     }
+
 
 
 
@@ -230,6 +264,7 @@ class Form extends CI_Controller
             //'asal_rujukan' => set_value('asal_rujukan'),
             'no_hp_penanggung_jawab' => set_value('no_hp_penanggung_jawab'),
             "data_rawat_inap" => $this->Tbl_ruang_rawat_inap_model->modaltampil(),
+            "data_pasien" => $this->Tbl_pasien_model->get_all()
         );
         $this->template->load('template', 'form/tbl_pendaftaran_form', $data);
     }
@@ -667,6 +702,27 @@ class Form extends CI_Controller
         );
 
         $this->db->insert('tbl_riwayat_pemeriksaan_laboratorium', $data);
+        echo $this->session->set_flashdata('msg', 'Ditambah');
+        redirect('form/detail/' . $no_rawat);
+    }
+
+    function create_pemeriksaan_pasien()
+    {
+        $no_rawat       = $this->input->post('no_rawat');
+        $berat_badan    = $this->input->post('berat_badan');
+        $tensi_darah    = $this->input->post('tensi_darah');
+        $suhu_badan    = $this->input->post('suhu_badan');
+        $tanggal        = date('Y-m-d');
+
+        $data = array(
+            'no_rawat' => $no_rawat,
+            'berat_badan' => $berat_badan,
+            'tensi_darah' => $tensi_darah,
+            'suhu_badan' => $suhu_badan,
+            'tanggal'     => $tanggal  
+        );
+
+        $this->db->insert('tbl_riwayat_pemeriksaan_pasien', $data);
         echo $this->session->set_flashdata('msg', 'Ditambah');
         redirect('form/detail/' . $no_rawat);
     }

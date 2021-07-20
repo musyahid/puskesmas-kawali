@@ -22,6 +22,11 @@ class Tbl_obat_alkes_bhp_model extends CI_Model
         return $this->db->get($this->table)->result();
     }
 
+    function cari_obat($nama_obat){
+        $query= $this->db->get_where('tbl_obat_alkes_bhp',array('nama_barang'=>$nama_obat));
+        return $query;
+    }
+
     // get data by id
     function get_by_id($id)
     {

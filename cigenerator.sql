@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 11, 2021 at 04:26 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- Waktu pembuatan: 20 Jul 2021 pada 16.18
+-- Versi server: 10.4.19-MariaDB
+-- Versi PHP: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_bidang`
+-- Struktur dari tabel `tbl_bidang`
 --
 
 CREATE TABLE `tbl_bidang` (
@@ -34,7 +33,7 @@ CREATE TABLE `tbl_bidang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_bidang`
+-- Dumping data untuk tabel `tbl_bidang`
 --
 
 INSERT INTO `tbl_bidang` (`id_bidang`, `nama_bidang`) VALUES
@@ -46,7 +45,7 @@ INSERT INTO `tbl_bidang` (`id_bidang`, `nama_bidang`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_departemen`
+-- Struktur dari tabel `tbl_departemen`
 --
 
 CREATE TABLE `tbl_departemen` (
@@ -55,7 +54,7 @@ CREATE TABLE `tbl_departemen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_departemen`
+-- Dumping data untuk tabel `tbl_departemen`
 --
 
 INSERT INTO `tbl_departemen` (`id_departemen`, `nama_departemen`) VALUES
@@ -66,7 +65,7 @@ INSERT INTO `tbl_departemen` (`id_departemen`, `nama_departemen`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_diagnosa_penyakit`
+-- Struktur dari tabel `tbl_diagnosa_penyakit`
 --
 
 CREATE TABLE `tbl_diagnosa_penyakit` (
@@ -78,7 +77,7 @@ CREATE TABLE `tbl_diagnosa_penyakit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_diagnosa_penyakit`
+-- Dumping data untuk tabel `tbl_diagnosa_penyakit`
 --
 
 INSERT INTO `tbl_diagnosa_penyakit` (`id_diagnosa_penyakit`, `nama_penyakit`, `ciri_ciri_penyakit`, `keterangan`, `ciri_ciri_umum`) VALUES
@@ -94,7 +93,7 @@ INSERT INTO `tbl_diagnosa_penyakit` (`id_diagnosa_penyakit`, `nama_penyakit`, `c
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_dokter`
+-- Struktur dari tabel `tbl_dokter`
 --
 
 CREATE TABLE `tbl_dokter` (
@@ -115,7 +114,7 @@ CREATE TABLE `tbl_dokter` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_dokter`
+-- Dumping data untuk tabel `tbl_dokter`
 --
 
 INSERT INTO `tbl_dokter` (`kode_dokter`, `nama_dokter`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `agama`, `alamat_tinggal`, `no_hp`, `status_menikah`, `id_spesialis`, `id_poliklinik`, `no_izin_praktek`, `golongan_darah`, `alumni`) VALUES
@@ -127,7 +126,7 @@ INSERT INTO `tbl_dokter` (`kode_dokter`, `nama_dokter`, `jenis_kelamin`, `tempat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_gedung`
+-- Struktur dari tabel `tbl_gedung`
 --
 
 CREATE TABLE `tbl_gedung` (
@@ -136,7 +135,7 @@ CREATE TABLE `tbl_gedung` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_gedung`
+-- Dumping data untuk tabel `tbl_gedung`
 --
 
 INSERT INTO `tbl_gedung` (`id_gedung`, `nama_gedung`) VALUES
@@ -146,7 +145,7 @@ INSERT INTO `tbl_gedung` (`id_gedung`, `nama_gedung`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_hak_akses`
+-- Struktur dari tabel `tbl_hak_akses`
 --
 
 CREATE TABLE `tbl_hak_akses` (
@@ -156,7 +155,7 @@ CREATE TABLE `tbl_hak_akses` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_hak_akses`
+-- Dumping data untuk tabel `tbl_hak_akses`
 --
 
 INSERT INTO `tbl_hak_akses` (`id`, `id_user_level`, `id_menu`) VALUES
@@ -170,7 +169,7 @@ INSERT INTO `tbl_hak_akses` (`id`, `id_user_level`, `id_menu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_jabatan`
+-- Struktur dari tabel `tbl_jabatan`
 --
 
 CREATE TABLE `tbl_jabatan` (
@@ -179,7 +178,7 @@ CREATE TABLE `tbl_jabatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_jabatan`
+-- Dumping data untuk tabel `tbl_jabatan`
 --
 
 INSERT INTO `tbl_jabatan` (`id_jabatan`, `nama_jabatan`) VALUES
@@ -192,7 +191,7 @@ INSERT INTO `tbl_jabatan` (`id_jabatan`, `nama_jabatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_jadwal_prakter_dokter`
+-- Struktur dari tabel `tbl_jadwal_prakter_dokter`
 --
 
 CREATE TABLE `tbl_jadwal_prakter_dokter` (
@@ -205,7 +204,7 @@ CREATE TABLE `tbl_jadwal_prakter_dokter` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_jadwal_prakter_dokter`
+-- Dumping data untuk tabel `tbl_jadwal_prakter_dokter`
 --
 
 INSERT INTO `tbl_jadwal_prakter_dokter` (`id_jadwal`, `kode_dokter`, `hari`, `jam_mulai`, `ja_selesai`, `id_poliklinik`) VALUES
@@ -214,7 +213,7 @@ INSERT INTO `tbl_jadwal_prakter_dokter` (`id_jadwal`, `kode_dokter`, `hari`, `ja
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_jenis_bayar`
+-- Struktur dari tabel `tbl_jenis_bayar`
 --
 
 CREATE TABLE `tbl_jenis_bayar` (
@@ -223,7 +222,7 @@ CREATE TABLE `tbl_jenis_bayar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_jenis_bayar`
+-- Dumping data untuk tabel `tbl_jenis_bayar`
 --
 
 INSERT INTO `tbl_jenis_bayar` (`id_jenis_bayar`, `jenis_bayar`) VALUES
@@ -233,7 +232,7 @@ INSERT INTO `tbl_jenis_bayar` (`id_jenis_bayar`, `jenis_bayar`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_jenjang_pendidikan`
+-- Struktur dari tabel `tbl_jenjang_pendidikan`
 --
 
 CREATE TABLE `tbl_jenjang_pendidikan` (
@@ -242,7 +241,7 @@ CREATE TABLE `tbl_jenjang_pendidikan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_jenjang_pendidikan`
+-- Dumping data untuk tabel `tbl_jenjang_pendidikan`
 --
 
 INSERT INTO `tbl_jenjang_pendidikan` (`id_jenjang_pendidikan`, `nama_jenjang_pendidikan`) VALUES
@@ -260,7 +259,7 @@ INSERT INTO `tbl_jenjang_pendidikan` (`id_jenjang_pendidikan`, `nama_jenjang_pen
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_kategori_barang`
+-- Struktur dari tabel `tbl_kategori_barang`
 --
 
 CREATE TABLE `tbl_kategori_barang` (
@@ -269,7 +268,7 @@ CREATE TABLE `tbl_kategori_barang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_kategori_barang`
+-- Dumping data untuk tabel `tbl_kategori_barang`
 --
 
 INSERT INTO `tbl_kategori_barang` (`id_kategori_barang`, `nama_kategori`) VALUES
@@ -281,7 +280,7 @@ INSERT INTO `tbl_kategori_barang` (`id_kategori_barang`, `nama_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_kategori_tindakan`
+-- Struktur dari tabel `tbl_kategori_tindakan`
 --
 
 CREATE TABLE `tbl_kategori_tindakan` (
@@ -290,7 +289,7 @@ CREATE TABLE `tbl_kategori_tindakan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_kategori_tindakan`
+-- Dumping data untuk tabel `tbl_kategori_tindakan`
 --
 
 INSERT INTO `tbl_kategori_tindakan` (`id_kategori_tindakan`, `kategori_tindakan`) VALUES
@@ -302,7 +301,7 @@ INSERT INTO `tbl_kategori_tindakan` (`id_kategori_tindakan`, `kategori_tindakan`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_menu`
+-- Struktur dari tabel `tbl_menu`
 --
 
 CREATE TABLE `tbl_menu` (
@@ -315,7 +314,7 @@ CREATE TABLE `tbl_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_menu`
+-- Dumping data untuk tabel `tbl_menu`
 --
 
 INSERT INTO `tbl_menu` (`id_menu`, `title`, `url`, `icon`, `is_main_menu`, `is_aktif`) VALUES
@@ -357,7 +356,7 @@ INSERT INTO `tbl_menu` (`id_menu`, `title`, `url`, `icon`, `is_main_menu`, `is_a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_obat_alkes_bhp`
+-- Struktur dari tabel `tbl_obat_alkes_bhp`
 --
 
 CREATE TABLE `tbl_obat_alkes_bhp` (
@@ -370,7 +369,7 @@ CREATE TABLE `tbl_obat_alkes_bhp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_obat_alkes_bhp`
+-- Dumping data untuk tabel `tbl_obat_alkes_bhp`
 --
 
 INSERT INTO `tbl_obat_alkes_bhp` (`id_obat_alkes_bhp`, `nama_barang`, `id_kategori_barang`, `id_satuan_barang`, `harga`, `stok`) VALUES
@@ -382,7 +381,7 @@ INSERT INTO `tbl_obat_alkes_bhp` (`id_obat_alkes_bhp`, `nama_barang`, `id_katego
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_pasien`
+-- Struktur dari tabel `tbl_pasien`
 --
 
 CREATE TABLE `tbl_pasien` (
@@ -401,7 +400,7 @@ CREATE TABLE `tbl_pasien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_pasien`
+-- Dumping data untuk tabel `tbl_pasien`
 --
 
 INSERT INTO `tbl_pasien` (`no_rekamedis`, `nama_pasien`, `jenis_kelamin`, `golongan_darah`, `tempat_lahir`, `tanggal_lahir`, `nama_ibu`, `alamat`, `agama`, `status_menikah`, `no_hp`, `pekerjaan`) VALUES
@@ -418,7 +417,7 @@ INSERT INTO `tbl_pasien` (`no_rekamedis`, `nama_pasien`, `jenis_kelamin`, `golon
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_pegawai`
+-- Struktur dari tabel `tbl_pegawai`
 --
 
 CREATE TABLE `tbl_pegawai` (
@@ -436,7 +435,7 @@ CREATE TABLE `tbl_pegawai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_pegawai`
+-- Dumping data untuk tabel `tbl_pegawai`
 --
 
 INSERT INTO `tbl_pegawai` (`nik`, `nama_pegawai`, `jenis_kemalin`, `npwp`, `id_jenjang_pendidikan`, `tempat_lahir`, `tanggal_lahir`, `id_jabatan`, `id_departemen`, `id_bidang`, `is_aktif`) VALUES
@@ -446,7 +445,7 @@ INSERT INTO `tbl_pegawai` (`nik`, `nama_pegawai`, `jenis_kemalin`, `npwp`, `id_j
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_pemeriksa`
+-- Struktur dari tabel `tbl_pemeriksa`
 --
 
 CREATE TABLE `tbl_pemeriksa` (
@@ -461,7 +460,7 @@ CREATE TABLE `tbl_pemeriksa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_pemeriksa`
+-- Dumping data untuk tabel `tbl_pemeriksa`
 --
 
 INSERT INTO `tbl_pemeriksa` (`id_periksa`, `no_rawat`, `no_rekamedis`, `tanggal_daftar`, `id_tindakan`, `id_pemeriksaan_laboratorium`, `id_diagnosa_penyakit`, `keluhan`) VALUES
@@ -471,7 +470,7 @@ INSERT INTO `tbl_pemeriksa` (`id_periksa`, `no_rawat`, `no_rekamedis`, `tanggal_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_pemeriksaan_laboratorium`
+-- Struktur dari tabel `tbl_pemeriksaan_laboratorium`
 --
 
 CREATE TABLE `tbl_pemeriksaan_laboratorium` (
@@ -481,7 +480,7 @@ CREATE TABLE `tbl_pemeriksaan_laboratorium` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_pemeriksaan_laboratorium`
+-- Dumping data untuk tabel `tbl_pemeriksaan_laboratorium`
 --
 
 INSERT INTO `tbl_pemeriksaan_laboratorium` (`id_pemeriksaan_laboratorium`, `nama_periksa`, `tarif`) VALUES
@@ -496,7 +495,7 @@ INSERT INTO `tbl_pemeriksaan_laboratorium` (`id_pemeriksaan_laboratorium`, `nama
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_pemeriksaan_rawat_inap`
+-- Struktur dari tabel `tbl_pemeriksaan_rawat_inap`
 --
 
 CREATE TABLE `tbl_pemeriksaan_rawat_inap` (
@@ -516,7 +515,7 @@ CREATE TABLE `tbl_pemeriksaan_rawat_inap` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_pemeriksaan_rawat_inap`
+-- Dumping data untuk tabel `tbl_pemeriksaan_rawat_inap`
 --
 
 INSERT INTO `tbl_pemeriksaan_rawat_inap` (`id_periksa`, `no_rawat`, `no_rekamedis`, `nama_pasien`, `tanggal_daftar`, `id_tempat_tidur`, `id_obat`, `id_tindakan`, `id_pemeriksaan_laboratorium`, `id_diagnosa_penyakit`, `Hasil_pemeriksaan_fisik`, `riwayat_penyakit`, `keluhan`) VALUES
@@ -527,7 +526,7 @@ INSERT INTO `tbl_pemeriksaan_rawat_inap` (`id_periksa`, `no_rawat`, `no_rekamedi
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_pendaftaran`
+-- Struktur dari tabel `tbl_pendaftaran`
 --
 
 CREATE TABLE `tbl_pendaftaran` (
@@ -546,7 +545,7 @@ CREATE TABLE `tbl_pendaftaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_pendaftaran`
+-- Dumping data untuk tabel `tbl_pendaftaran`
 --
 
 INSERT INTO `tbl_pendaftaran` (`no_registrasi`, `no_rawat`, `no_rekamedis`, `cara_masuk`, `tanggal_daftar`, `kode_dokter_penanggung_jawab`, `id_poliklinik`, `nama_penanggung_jawab`, `hubungan_dengan_penanggung_jawab`, `alamat_penanggung_jawab`, `id_jenis_bayar`, `no_hp_penanggung_jawab`) VALUES
@@ -576,7 +575,7 @@ INSERT INTO `tbl_pendaftaran` (`no_registrasi`, `no_rawat`, `no_rekamedis`, `car
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_pengadaan_detail`
+-- Struktur dari tabel `tbl_pengadaan_detail`
 --
 
 CREATE TABLE `tbl_pengadaan_detail` (
@@ -590,7 +589,7 @@ CREATE TABLE `tbl_pengadaan_detail` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_pengadaan_obat_alkes_bhp`
+-- Struktur dari tabel `tbl_pengadaan_obat_alkes_bhp`
 --
 
 CREATE TABLE `tbl_pengadaan_obat_alkes_bhp` (
@@ -602,7 +601,7 @@ CREATE TABLE `tbl_pengadaan_obat_alkes_bhp` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_penjualan_detail`
+-- Struktur dari tabel `tbl_penjualan_detail`
 --
 
 CREATE TABLE `tbl_penjualan_detail` (
@@ -615,7 +614,7 @@ CREATE TABLE `tbl_penjualan_detail` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_penjualan_obat_alkes_bhp`
+-- Struktur dari tabel `tbl_penjualan_obat_alkes_bhp`
 --
 
 CREATE TABLE `tbl_penjualan_obat_alkes_bhp` (
@@ -627,7 +626,7 @@ CREATE TABLE `tbl_penjualan_obat_alkes_bhp` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_pj_riwayat_tindakan`
+-- Struktur dari tabel `tbl_pj_riwayat_tindakan`
 --
 
 CREATE TABLE `tbl_pj_riwayat_tindakan` (
@@ -638,7 +637,7 @@ CREATE TABLE `tbl_pj_riwayat_tindakan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_pj_riwayat_tindakan`
+-- Dumping data untuk tabel `tbl_pj_riwayat_tindakan`
 --
 
 INSERT INTO `tbl_pj_riwayat_tindakan` (`id_pj_riwayat_tindakan`, `id_riwayat_tindakan`, `kode_pj_riwayat_tindakan`, `keterangan`) VALUES
@@ -665,7 +664,7 @@ INSERT INTO `tbl_pj_riwayat_tindakan` (`id_pj_riwayat_tindakan`, `id_riwayat_tin
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_poliklinik`
+-- Struktur dari tabel `tbl_poliklinik`
 --
 
 CREATE TABLE `tbl_poliklinik` (
@@ -674,7 +673,7 @@ CREATE TABLE `tbl_poliklinik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_poliklinik`
+-- Dumping data untuk tabel `tbl_poliklinik`
 --
 
 INSERT INTO `tbl_poliklinik` (`id_poliklinik`, `nama_poliklinik`) VALUES
@@ -687,7 +686,7 @@ INSERT INTO `tbl_poliklinik` (`id_poliklinik`, `nama_poliklinik`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_rawat_inap`
+-- Struktur dari tabel `tbl_rawat_inap`
 --
 
 CREATE TABLE `tbl_rawat_inap` (
@@ -698,7 +697,7 @@ CREATE TABLE `tbl_rawat_inap` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_rawat_inap`
+-- Dumping data untuk tabel `tbl_rawat_inap`
 --
 
 INSERT INTO `tbl_rawat_inap` (`no_rawat`, `tanggal_masuk`, `tanggal_keluar`, `id_ruang_rawat_inap`) VALUES
@@ -720,7 +719,7 @@ INSERT INTO `tbl_rawat_inap` (`no_rawat`, `tanggal_masuk`, `tanggal_keluar`, `id
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_riwayat_diagnosa_penyakit`
+-- Struktur dari tabel `tbl_riwayat_diagnosa_penyakit`
 --
 
 CREATE TABLE `tbl_riwayat_diagnosa_penyakit` (
@@ -734,7 +733,7 @@ CREATE TABLE `tbl_riwayat_diagnosa_penyakit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_riwayat_diagnosa_penyakit`
+-- Dumping data untuk tabel `tbl_riwayat_diagnosa_penyakit`
 --
 
 INSERT INTO `tbl_riwayat_diagnosa_penyakit` (`id_riwayat_diagnosa_penyakit`, `id_diagnosa_penyakit`, `no_rawat`, `tanggal`, `ciri_ciri_umum`, `ciri_ciri_penyakit`, `keterangan`) VALUES
@@ -749,7 +748,7 @@ INSERT INTO `tbl_riwayat_diagnosa_penyakit` (`id_riwayat_diagnosa_penyakit`, `id
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_riwayat_pemberian_obat`
+-- Struktur dari tabel `tbl_riwayat_pemberian_obat`
 --
 
 CREATE TABLE `tbl_riwayat_pemberian_obat` (
@@ -761,7 +760,7 @@ CREATE TABLE `tbl_riwayat_pemberian_obat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_riwayat_pemberian_obat`
+-- Dumping data untuk tabel `tbl_riwayat_pemberian_obat`
 --
 
 INSERT INTO `tbl_riwayat_pemberian_obat` (`id_riwayat_pemberian_obat`, `no_rawat`, `tanggal`, `id_obat_alkes_bhp`, `jumlah`) VALUES
@@ -785,7 +784,7 @@ INSERT INTO `tbl_riwayat_pemberian_obat` (`id_riwayat_pemberian_obat`, `no_rawat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_riwayat_pemeriksaan_laboratorium`
+-- Struktur dari tabel `tbl_riwayat_pemeriksaan_laboratorium`
 --
 
 CREATE TABLE `tbl_riwayat_pemeriksaan_laboratorium` (
@@ -798,7 +797,7 @@ CREATE TABLE `tbl_riwayat_pemeriksaan_laboratorium` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_riwayat_pemeriksaan_laboratorium`
+-- Dumping data untuk tabel `tbl_riwayat_pemeriksaan_laboratorium`
 --
 
 INSERT INTO `tbl_riwayat_pemeriksaan_laboratorium` (`id_riwayat_pemeriksaan_laboratorium`, `no_rawat`, `tanggal`, `id_pemeriksaan_laboratorium`, `hasil`, `keterangan`) VALUES
@@ -815,7 +814,29 @@ INSERT INTO `tbl_riwayat_pemeriksaan_laboratorium` (`id_riwayat_pemeriksaan_labo
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_riwayat_tindakan`
+-- Struktur dari tabel `tbl_riwayat_pemeriksaan_pasien`
+--
+
+CREATE TABLE `tbl_riwayat_pemeriksaan_pasien` (
+  `id` int(11) NOT NULL,
+  `no_rawat` varchar(30) CHARACTER SET latin1 DEFAULT NULL,
+  `berat_badan` int(11) DEFAULT 0,
+  `tensi_darah` int(11) DEFAULT 0,
+  `suhu_badan` int(11) DEFAULT 0,
+  `tanggal` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_riwayat_pemeriksaan_pasien`
+--
+
+INSERT INTO `tbl_riwayat_pemeriksaan_pasien` (`id`, `no_rawat`, `berat_badan`, `tensi_darah`, `suhu_badan`, `tanggal`) VALUES
+(3, '2021/05/10/0002', 70, 120, 100, '2021-07-19');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_riwayat_tindakan`
 --
 
 CREATE TABLE `tbl_riwayat_tindakan` (
@@ -828,7 +849,7 @@ CREATE TABLE `tbl_riwayat_tindakan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_riwayat_tindakan`
+-- Dumping data untuk tabel `tbl_riwayat_tindakan`
 --
 
 INSERT INTO `tbl_riwayat_tindakan` (`id_riwayat_tindakan`, `id_tindakan`, `no_rawat`, `hasil_periksa`, `perkembangan`, `tanggal`) VALUES
@@ -851,7 +872,7 @@ INSERT INTO `tbl_riwayat_tindakan` (`id_riwayat_tindakan`, `id_tindakan`, `no_ra
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_ruang_rawat_inap`
+-- Struktur dari tabel `tbl_ruang_rawat_inap`
 --
 
 CREATE TABLE `tbl_ruang_rawat_inap` (
@@ -864,7 +885,7 @@ CREATE TABLE `tbl_ruang_rawat_inap` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_ruang_rawat_inap`
+-- Dumping data untuk tabel `tbl_ruang_rawat_inap`
 --
 
 INSERT INTO `tbl_ruang_rawat_inap` (`id_ruang_rawat_inap`, `id_gedung`, `nama_ruangan`, `kelas`, `tarif`, `status`) VALUES
@@ -879,7 +900,7 @@ INSERT INTO `tbl_ruang_rawat_inap` (`id_ruang_rawat_inap`, `id_gedung`, `nama_ru
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_satuan_barang`
+-- Struktur dari tabel `tbl_satuan_barang`
 --
 
 CREATE TABLE `tbl_satuan_barang` (
@@ -888,7 +909,7 @@ CREATE TABLE `tbl_satuan_barang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_satuan_barang`
+-- Dumping data untuk tabel `tbl_satuan_barang`
 --
 
 INSERT INTO `tbl_satuan_barang` (`id_satuan_barang`, `nama_satuan`) VALUES
@@ -899,7 +920,7 @@ INSERT INTO `tbl_satuan_barang` (`id_satuan_barang`, `nama_satuan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_setting`
+-- Struktur dari tabel `tbl_setting`
 --
 
 CREATE TABLE `tbl_setting` (
@@ -909,7 +930,7 @@ CREATE TABLE `tbl_setting` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_setting`
+-- Dumping data untuk tabel `tbl_setting`
 --
 
 INSERT INTO `tbl_setting` (`id_setting`, `nama_setting`, `value`) VALUES
@@ -918,7 +939,7 @@ INSERT INTO `tbl_setting` (`id_setting`, `nama_setting`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_spesialis`
+-- Struktur dari tabel `tbl_spesialis`
 --
 
 CREATE TABLE `tbl_spesialis` (
@@ -927,7 +948,7 @@ CREATE TABLE `tbl_spesialis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_spesialis`
+-- Dumping data untuk tabel `tbl_spesialis`
 --
 
 INSERT INTO `tbl_spesialis` (`id_spesialis`, `nama_spesialis`) VALUES
@@ -940,7 +961,7 @@ INSERT INTO `tbl_spesialis` (`id_spesialis`, `nama_spesialis`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_supplier`
+-- Struktur dari tabel `tbl_supplier`
 --
 
 CREATE TABLE `tbl_supplier` (
@@ -951,7 +972,7 @@ CREATE TABLE `tbl_supplier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_supplier`
+-- Dumping data untuk tabel `tbl_supplier`
 --
 
 INSERT INTO `tbl_supplier` (`id_supplier`, `nama_supplier`, `alamat`, `no_telpon`) VALUES
@@ -960,7 +981,7 @@ INSERT INTO `tbl_supplier` (`id_supplier`, `nama_supplier`, `alamat`, `no_telpon
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_tempat_tidur`
+-- Struktur dari tabel `tbl_tempat_tidur`
 --
 
 CREATE TABLE `tbl_tempat_tidur` (
@@ -970,7 +991,7 @@ CREATE TABLE `tbl_tempat_tidur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_tempat_tidur`
+-- Dumping data untuk tabel `tbl_tempat_tidur`
 --
 
 INSERT INTO `tbl_tempat_tidur` (`id_tempat_tidur`, `id_ruang_rawat_inap`, `status`) VALUES
@@ -987,7 +1008,7 @@ INSERT INTO `tbl_tempat_tidur` (`id_tempat_tidur`, `id_ruang_rawat_inap`, `statu
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_tindakan`
+-- Struktur dari tabel `tbl_tindakan`
 --
 
 CREATE TABLE `tbl_tindakan` (
@@ -1001,7 +1022,7 @@ CREATE TABLE `tbl_tindakan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_tindakan`
+-- Dumping data untuk tabel `tbl_tindakan`
 --
 
 INSERT INTO `tbl_tindakan` (`id_tindakan`, `jenis_tindakan`, `nama_tindakan`, `id_kategori_tindakan`, `tarif`, `tindakan_oleh`, `id_poliklinik`) VALUES
@@ -1016,7 +1037,7 @@ INSERT INTO `tbl_tindakan` (`id_tindakan`, `jenis_tindakan`, `nama_tindakan`, `i
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_user`
+-- Struktur dari tabel `tbl_user`
 --
 
 CREATE TABLE `tbl_user` (
@@ -1030,7 +1051,7 @@ CREATE TABLE `tbl_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_user`
+-- Dumping data untuk tabel `tbl_user`
 --
 
 INSERT INTO `tbl_user` (`id_users`, `full_name`, `email`, `password`, `images`, `id_user_level`, `is_aktif`) VALUES
@@ -1041,7 +1062,7 @@ INSERT INTO `tbl_user` (`id_users`, `full_name`, `email`, `password`, `images`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_user_level`
+-- Struktur dari tabel `tbl_user_level`
 --
 
 CREATE TABLE `tbl_user_level` (
@@ -1050,7 +1071,7 @@ CREATE TABLE `tbl_user_level` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_user_level`
+-- Dumping data untuk tabel `tbl_user_level`
 --
 
 INSERT INTO `tbl_user_level` (`id_user_level`, `nama_level`) VALUES
@@ -1062,25 +1083,25 @@ INSERT INTO `tbl_user_level` (`id_user_level`, `nama_level`) VALUES
 --
 
 --
--- Indexes for table `tbl_bidang`
+-- Indeks untuk tabel `tbl_bidang`
 --
 ALTER TABLE `tbl_bidang`
   ADD PRIMARY KEY (`id_bidang`);
 
 --
--- Indexes for table `tbl_departemen`
+-- Indeks untuk tabel `tbl_departemen`
 --
 ALTER TABLE `tbl_departemen`
   ADD PRIMARY KEY (`id_departemen`);
 
 --
--- Indexes for table `tbl_diagnosa_penyakit`
+-- Indeks untuk tabel `tbl_diagnosa_penyakit`
 --
 ALTER TABLE `tbl_diagnosa_penyakit`
   ADD PRIMARY KEY (`id_diagnosa_penyakit`);
 
 --
--- Indexes for table `tbl_dokter`
+-- Indeks untuk tabel `tbl_dokter`
 --
 ALTER TABLE `tbl_dokter`
   ADD PRIMARY KEY (`kode_dokter`),
@@ -1088,13 +1109,13 @@ ALTER TABLE `tbl_dokter`
   ADD KEY `id_poliklinik` (`id_poliklinik`);
 
 --
--- Indexes for table `tbl_gedung`
+-- Indeks untuk tabel `tbl_gedung`
 --
 ALTER TABLE `tbl_gedung`
   ADD PRIMARY KEY (`id_gedung`);
 
 --
--- Indexes for table `tbl_hak_akses`
+-- Indeks untuk tabel `tbl_hak_akses`
 --
 ALTER TABLE `tbl_hak_akses`
   ADD PRIMARY KEY (`id`),
@@ -1102,13 +1123,13 @@ ALTER TABLE `tbl_hak_akses`
   ADD KEY `id_user_level` (`id_user_level`);
 
 --
--- Indexes for table `tbl_jabatan`
+-- Indeks untuk tabel `tbl_jabatan`
 --
 ALTER TABLE `tbl_jabatan`
   ADD PRIMARY KEY (`id_jabatan`);
 
 --
--- Indexes for table `tbl_jadwal_prakter_dokter`
+-- Indeks untuk tabel `tbl_jadwal_prakter_dokter`
 --
 ALTER TABLE `tbl_jadwal_prakter_dokter`
   ADD PRIMARY KEY (`id_jadwal`),
@@ -1116,37 +1137,37 @@ ALTER TABLE `tbl_jadwal_prakter_dokter`
   ADD KEY `id_poliklinik` (`id_poliklinik`);
 
 --
--- Indexes for table `tbl_jenis_bayar`
+-- Indeks untuk tabel `tbl_jenis_bayar`
 --
 ALTER TABLE `tbl_jenis_bayar`
   ADD PRIMARY KEY (`id_jenis_bayar`);
 
 --
--- Indexes for table `tbl_jenjang_pendidikan`
+-- Indeks untuk tabel `tbl_jenjang_pendidikan`
 --
 ALTER TABLE `tbl_jenjang_pendidikan`
   ADD PRIMARY KEY (`id_jenjang_pendidikan`);
 
 --
--- Indexes for table `tbl_kategori_barang`
+-- Indeks untuk tabel `tbl_kategori_barang`
 --
 ALTER TABLE `tbl_kategori_barang`
   ADD PRIMARY KEY (`id_kategori_barang`);
 
 --
--- Indexes for table `tbl_kategori_tindakan`
+-- Indeks untuk tabel `tbl_kategori_tindakan`
 --
 ALTER TABLE `tbl_kategori_tindakan`
   ADD PRIMARY KEY (`id_kategori_tindakan`);
 
 --
--- Indexes for table `tbl_menu`
+-- Indeks untuk tabel `tbl_menu`
 --
 ALTER TABLE `tbl_menu`
   ADD PRIMARY KEY (`id_menu`);
 
 --
--- Indexes for table `tbl_obat_alkes_bhp`
+-- Indeks untuk tabel `tbl_obat_alkes_bhp`
 --
 ALTER TABLE `tbl_obat_alkes_bhp`
   ADD PRIMARY KEY (`id_obat_alkes_bhp`),
@@ -1154,13 +1175,13 @@ ALTER TABLE `tbl_obat_alkes_bhp`
   ADD KEY `id_satuan_barang` (`id_satuan_barang`);
 
 --
--- Indexes for table `tbl_pasien`
+-- Indeks untuk tabel `tbl_pasien`
 --
 ALTER TABLE `tbl_pasien`
   ADD PRIMARY KEY (`no_rekamedis`);
 
 --
--- Indexes for table `tbl_pegawai`
+-- Indeks untuk tabel `tbl_pegawai`
 --
 ALTER TABLE `tbl_pegawai`
   ADD PRIMARY KEY (`nik`),
@@ -1170,7 +1191,7 @@ ALTER TABLE `tbl_pegawai`
   ADD KEY `id_jenjang_pendidikan` (`id_jenjang_pendidikan`);
 
 --
--- Indexes for table `tbl_pemeriksa`
+-- Indeks untuk tabel `tbl_pemeriksa`
 --
 ALTER TABLE `tbl_pemeriksa`
   ADD PRIMARY KEY (`id_periksa`),
@@ -1181,13 +1202,13 @@ ALTER TABLE `tbl_pemeriksa`
   ADD KEY `id_pemeriksaan_laboratorium` (`id_pemeriksaan_laboratorium`);
 
 --
--- Indexes for table `tbl_pemeriksaan_laboratorium`
+-- Indeks untuk tabel `tbl_pemeriksaan_laboratorium`
 --
 ALTER TABLE `tbl_pemeriksaan_laboratorium`
   ADD PRIMARY KEY (`id_pemeriksaan_laboratorium`);
 
 --
--- Indexes for table `tbl_pemeriksaan_rawat_inap`
+-- Indeks untuk tabel `tbl_pemeriksaan_rawat_inap`
 --
 ALTER TABLE `tbl_pemeriksaan_rawat_inap`
   ADD PRIMARY KEY (`id_periksa`),
@@ -1199,7 +1220,7 @@ ALTER TABLE `tbl_pemeriksaan_rawat_inap`
   ADD KEY `tbl_pemeriksaan_rawat_inap_ibfk_6` (`id_tempat_tidur`);
 
 --
--- Indexes for table `tbl_pendaftaran`
+-- Indeks untuk tabel `tbl_pendaftaran`
 --
 ALTER TABLE `tbl_pendaftaran`
   ADD PRIMARY KEY (`no_rawat`),
@@ -1208,7 +1229,7 @@ ALTER TABLE `tbl_pendaftaran`
   ADD KEY `id_jenis_bayar` (`id_jenis_bayar`);
 
 --
--- Indexes for table `tbl_pengadaan_detail`
+-- Indeks untuk tabel `tbl_pengadaan_detail`
 --
 ALTER TABLE `tbl_pengadaan_detail`
   ADD PRIMARY KEY (`id_pengadaan_detail`),
@@ -1216,14 +1237,14 @@ ALTER TABLE `tbl_pengadaan_detail`
   ADD KEY `id_pengadaan_obat_alkes_bhp` (`id_pengadaan_obat_alkes_bhp`);
 
 --
--- Indexes for table `tbl_pengadaan_obat_alkes_bhp`
+-- Indeks untuk tabel `tbl_pengadaan_obat_alkes_bhp`
 --
 ALTER TABLE `tbl_pengadaan_obat_alkes_bhp`
   ADD PRIMARY KEY (`id_pengadaan_obat_alkes_bhp`),
   ADD KEY `id_supplier` (`id_supplier`);
 
 --
--- Indexes for table `tbl_penjualan_detail`
+-- Indeks untuk tabel `tbl_penjualan_detail`
 --
 ALTER TABLE `tbl_penjualan_detail`
   ADD PRIMARY KEY (`id_penjualan_detail`),
@@ -1231,39 +1252,39 @@ ALTER TABLE `tbl_penjualan_detail`
   ADD KEY `id_penjualan_obat_alkes_bhp` (`id_penjualan_obat_alkes_bhp`);
 
 --
--- Indexes for table `tbl_penjualan_obat_alkes_bhp`
+-- Indeks untuk tabel `tbl_penjualan_obat_alkes_bhp`
 --
 ALTER TABLE `tbl_penjualan_obat_alkes_bhp`
   ADD PRIMARY KEY (`id_penjualan_obat_alkes_bhp`);
 
 --
--- Indexes for table `tbl_pj_riwayat_tindakan`
+-- Indeks untuk tabel `tbl_pj_riwayat_tindakan`
 --
 ALTER TABLE `tbl_pj_riwayat_tindakan`
   ADD PRIMARY KEY (`id_pj_riwayat_tindakan`),
   ADD KEY `id_riwayat_tindakan` (`id_riwayat_tindakan`);
 
 --
--- Indexes for table `tbl_poliklinik`
+-- Indeks untuk tabel `tbl_poliklinik`
 --
 ALTER TABLE `tbl_poliklinik`
   ADD PRIMARY KEY (`id_poliklinik`);
 
 --
--- Indexes for table `tbl_rawat_inap`
+-- Indeks untuk tabel `tbl_rawat_inap`
 --
 ALTER TABLE `tbl_rawat_inap`
   ADD PRIMARY KEY (`no_rawat`),
   ADD KEY `id_ruang_rawat_inap` (`id_ruang_rawat_inap`);
 
 --
--- Indexes for table `tbl_riwayat_diagnosa_penyakit`
+-- Indeks untuk tabel `tbl_riwayat_diagnosa_penyakit`
 --
 ALTER TABLE `tbl_riwayat_diagnosa_penyakit`
   ADD PRIMARY KEY (`id_riwayat_diagnosa_penyakit`);
 
 --
--- Indexes for table `tbl_riwayat_pemberian_obat`
+-- Indeks untuk tabel `tbl_riwayat_pemberian_obat`
 --
 ALTER TABLE `tbl_riwayat_pemberian_obat`
   ADD PRIMARY KEY (`id_riwayat_pemberian_obat`),
@@ -1271,7 +1292,7 @@ ALTER TABLE `tbl_riwayat_pemberian_obat`
   ADD KEY `id_obat_alkes_bhp` (`id_obat_alkes_bhp`);
 
 --
--- Indexes for table `tbl_riwayat_pemeriksaan_laboratorium`
+-- Indeks untuk tabel `tbl_riwayat_pemeriksaan_laboratorium`
 --
 ALTER TABLE `tbl_riwayat_pemeriksaan_laboratorium`
   ADD PRIMARY KEY (`id_riwayat_pemeriksaan_laboratorium`),
@@ -1279,7 +1300,14 @@ ALTER TABLE `tbl_riwayat_pemeriksaan_laboratorium`
   ADD KEY `no_rawat` (`no_rawat`);
 
 --
--- Indexes for table `tbl_riwayat_tindakan`
+-- Indeks untuk tabel `tbl_riwayat_pemeriksaan_pasien`
+--
+ALTER TABLE `tbl_riwayat_pemeriksaan_pasien`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FK_tbl_riwayat_pemeriksaan_pasien_tbl_pendaftaran` (`no_rawat`);
+
+--
+-- Indeks untuk tabel `tbl_riwayat_tindakan`
 --
 ALTER TABLE `tbl_riwayat_tindakan`
   ADD PRIMARY KEY (`id_riwayat_tindakan`),
@@ -1287,45 +1315,45 @@ ALTER TABLE `tbl_riwayat_tindakan`
   ADD KEY `no_rawat` (`no_rawat`);
 
 --
--- Indexes for table `tbl_ruang_rawat_inap`
+-- Indeks untuk tabel `tbl_ruang_rawat_inap`
 --
 ALTER TABLE `tbl_ruang_rawat_inap`
   ADD PRIMARY KEY (`id_ruang_rawat_inap`),
   ADD KEY `id_gedung` (`id_gedung`);
 
 --
--- Indexes for table `tbl_satuan_barang`
+-- Indeks untuk tabel `tbl_satuan_barang`
 --
 ALTER TABLE `tbl_satuan_barang`
   ADD PRIMARY KEY (`id_satuan_barang`);
 
 --
--- Indexes for table `tbl_setting`
+-- Indeks untuk tabel `tbl_setting`
 --
 ALTER TABLE `tbl_setting`
   ADD PRIMARY KEY (`id_setting`);
 
 --
--- Indexes for table `tbl_spesialis`
+-- Indeks untuk tabel `tbl_spesialis`
 --
 ALTER TABLE `tbl_spesialis`
   ADD PRIMARY KEY (`id_spesialis`);
 
 --
--- Indexes for table `tbl_supplier`
+-- Indeks untuk tabel `tbl_supplier`
 --
 ALTER TABLE `tbl_supplier`
   ADD PRIMARY KEY (`id_supplier`);
 
 --
--- Indexes for table `tbl_tempat_tidur`
+-- Indeks untuk tabel `tbl_tempat_tidur`
 --
 ALTER TABLE `tbl_tempat_tidur`
   ADD PRIMARY KEY (`id_tempat_tidur`),
   ADD KEY `id_ruang_rawat_inap` (`id_ruang_rawat_inap`);
 
 --
--- Indexes for table `tbl_tindakan`
+-- Indeks untuk tabel `tbl_tindakan`
 --
 ALTER TABLE `tbl_tindakan`
   ADD PRIMARY KEY (`id_tindakan`),
@@ -1333,206 +1361,212 @@ ALTER TABLE `tbl_tindakan`
   ADD KEY `id_kategori_tindakan` (`id_kategori_tindakan`);
 
 --
--- Indexes for table `tbl_user`
+-- Indeks untuk tabel `tbl_user`
 --
 ALTER TABLE `tbl_user`
   ADD PRIMARY KEY (`id_users`),
   ADD KEY `id_user_level` (`id_user_level`);
 
 --
--- Indexes for table `tbl_user_level`
+-- Indeks untuk tabel `tbl_user_level`
 --
 ALTER TABLE `tbl_user_level`
   ADD PRIMARY KEY (`id_user_level`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tbl_bidang`
+-- AUTO_INCREMENT untuk tabel `tbl_bidang`
 --
 ALTER TABLE `tbl_bidang`
   MODIFY `id_bidang` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `tbl_departemen`
+-- AUTO_INCREMENT untuk tabel `tbl_departemen`
 --
 ALTER TABLE `tbl_departemen`
   MODIFY `id_departemen` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `tbl_dokter`
+-- AUTO_INCREMENT untuk tabel `tbl_dokter`
 --
 ALTER TABLE `tbl_dokter`
   MODIFY `kode_dokter` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `tbl_gedung`
+-- AUTO_INCREMENT untuk tabel `tbl_gedung`
 --
 ALTER TABLE `tbl_gedung`
   MODIFY `id_gedung` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `tbl_hak_akses`
+-- AUTO_INCREMENT untuk tabel `tbl_hak_akses`
 --
 ALTER TABLE `tbl_hak_akses`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT for table `tbl_jabatan`
+-- AUTO_INCREMENT untuk tabel `tbl_jabatan`
 --
 ALTER TABLE `tbl_jabatan`
   MODIFY `id_jabatan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `tbl_jadwal_prakter_dokter`
+-- AUTO_INCREMENT untuk tabel `tbl_jadwal_prakter_dokter`
 --
 ALTER TABLE `tbl_jadwal_prakter_dokter`
   MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `tbl_jenis_bayar`
+-- AUTO_INCREMENT untuk tabel `tbl_jenis_bayar`
 --
 ALTER TABLE `tbl_jenis_bayar`
   MODIFY `id_jenis_bayar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tbl_jenjang_pendidikan`
+-- AUTO_INCREMENT untuk tabel `tbl_jenjang_pendidikan`
 --
 ALTER TABLE `tbl_jenjang_pendidikan`
   MODIFY `id_jenjang_pendidikan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `tbl_kategori_barang`
+-- AUTO_INCREMENT untuk tabel `tbl_kategori_barang`
 --
 ALTER TABLE `tbl_kategori_barang`
   MODIFY `id_kategori_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `tbl_menu`
+-- AUTO_INCREMENT untuk tabel `tbl_menu`
 --
 ALTER TABLE `tbl_menu`
   MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
--- AUTO_INCREMENT for table `tbl_pegawai`
+-- AUTO_INCREMENT untuk tabel `tbl_pegawai`
 --
 ALTER TABLE `tbl_pegawai`
   MODIFY `nik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
--- AUTO_INCREMENT for table `tbl_pengadaan_detail`
+-- AUTO_INCREMENT untuk tabel `tbl_pengadaan_detail`
 --
 ALTER TABLE `tbl_pengadaan_detail`
   MODIFY `id_pengadaan_detail` int(30) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tbl_penjualan_detail`
+-- AUTO_INCREMENT untuk tabel `tbl_penjualan_detail`
 --
 ALTER TABLE `tbl_penjualan_detail`
   MODIFY `id_penjualan_detail` int(20) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tbl_pj_riwayat_tindakan`
+-- AUTO_INCREMENT untuk tabel `tbl_pj_riwayat_tindakan`
 --
 ALTER TABLE `tbl_pj_riwayat_tindakan`
   MODIFY `id_pj_riwayat_tindakan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
--- AUTO_INCREMENT for table `tbl_poliklinik`
+-- AUTO_INCREMENT untuk tabel `tbl_poliklinik`
 --
 ALTER TABLE `tbl_poliklinik`
   MODIFY `id_poliklinik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `tbl_riwayat_diagnosa_penyakit`
+-- AUTO_INCREMENT untuk tabel `tbl_riwayat_diagnosa_penyakit`
 --
 ALTER TABLE `tbl_riwayat_diagnosa_penyakit`
   MODIFY `id_riwayat_diagnosa_penyakit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `tbl_riwayat_pemberian_obat`
+-- AUTO_INCREMENT untuk tabel `tbl_riwayat_pemberian_obat`
 --
 ALTER TABLE `tbl_riwayat_pemberian_obat`
   MODIFY `id_riwayat_pemberian_obat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `tbl_riwayat_pemeriksaan_laboratorium`
+-- AUTO_INCREMENT untuk tabel `tbl_riwayat_pemeriksaan_laboratorium`
 --
 ALTER TABLE `tbl_riwayat_pemeriksaan_laboratorium`
   MODIFY `id_riwayat_pemeriksaan_laboratorium` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `tbl_riwayat_tindakan`
+-- AUTO_INCREMENT untuk tabel `tbl_riwayat_pemeriksaan_pasien`
+--
+ALTER TABLE `tbl_riwayat_pemeriksaan_pasien`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT untuk tabel `tbl_riwayat_tindakan`
 --
 ALTER TABLE `tbl_riwayat_tindakan`
   MODIFY `id_riwayat_tindakan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
--- AUTO_INCREMENT for table `tbl_satuan_barang`
+-- AUTO_INCREMENT untuk tabel `tbl_satuan_barang`
 --
 ALTER TABLE `tbl_satuan_barang`
   MODIFY `id_satuan_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `tbl_setting`
+-- AUTO_INCREMENT untuk tabel `tbl_setting`
 --
 ALTER TABLE `tbl_setting`
   MODIFY `id_setting` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tbl_spesialis`
+-- AUTO_INCREMENT untuk tabel `tbl_spesialis`
 --
 ALTER TABLE `tbl_spesialis`
   MODIFY `id_spesialis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `tbl_user`
+-- AUTO_INCREMENT untuk tabel `tbl_user`
 --
 ALTER TABLE `tbl_user`
   MODIFY `id_users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `tbl_user_level`
+-- AUTO_INCREMENT untuk tabel `tbl_user_level`
 --
 ALTER TABLE `tbl_user_level`
   MODIFY `id_user_level` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `tbl_dokter`
+-- Ketidakleluasaan untuk tabel `tbl_dokter`
 --
 ALTER TABLE `tbl_dokter`
   ADD CONSTRAINT `tbl_dokter_ibfk_1` FOREIGN KEY (`id_spesialis`) REFERENCES `tbl_spesialis` (`id_spesialis`),
   ADD CONSTRAINT `tbl_dokter_ibfk_2` FOREIGN KEY (`id_poliklinik`) REFERENCES `tbl_poliklinik` (`id_poliklinik`);
 
 --
--- Constraints for table `tbl_hak_akses`
+-- Ketidakleluasaan untuk tabel `tbl_hak_akses`
 --
 ALTER TABLE `tbl_hak_akses`
   ADD CONSTRAINT `tbl_hak_akses_ibfk_1` FOREIGN KEY (`id_menu`) REFERENCES `tbl_menu` (`id_menu`),
   ADD CONSTRAINT `tbl_hak_akses_ibfk_2` FOREIGN KEY (`id_user_level`) REFERENCES `tbl_user_level` (`id_user_level`);
 
 --
--- Constraints for table `tbl_jadwal_prakter_dokter`
+-- Ketidakleluasaan untuk tabel `tbl_jadwal_prakter_dokter`
 --
 ALTER TABLE `tbl_jadwal_prakter_dokter`
   ADD CONSTRAINT `tbl_jadwal_prakter_dokter_ibfk_1` FOREIGN KEY (`kode_dokter`) REFERENCES `tbl_dokter` (`kode_dokter`),
   ADD CONSTRAINT `tbl_jadwal_prakter_dokter_ibfk_2` FOREIGN KEY (`id_poliklinik`) REFERENCES `tbl_poliklinik` (`id_poliklinik`);
 
 --
--- Constraints for table `tbl_obat_alkes_bhp`
+-- Ketidakleluasaan untuk tabel `tbl_obat_alkes_bhp`
 --
 ALTER TABLE `tbl_obat_alkes_bhp`
   ADD CONSTRAINT `tbl_obat_alkes_bhp_ibfk_1` FOREIGN KEY (`id_kategori_barang`) REFERENCES `tbl_kategori_barang` (`id_kategori_barang`),
   ADD CONSTRAINT `tbl_obat_alkes_bhp_ibfk_2` FOREIGN KEY (`id_satuan_barang`) REFERENCES `tbl_satuan_barang` (`id_satuan_barang`);
 
 --
--- Constraints for table `tbl_pegawai`
+-- Ketidakleluasaan untuk tabel `tbl_pegawai`
 --
 ALTER TABLE `tbl_pegawai`
   ADD CONSTRAINT `tbl_pegawai_ibfk_1` FOREIGN KEY (`id_bidang`) REFERENCES `tbl_bidang` (`id_bidang`),
@@ -1541,7 +1575,7 @@ ALTER TABLE `tbl_pegawai`
   ADD CONSTRAINT `tbl_pegawai_ibfk_5` FOREIGN KEY (`id_jenjang_pendidikan`) REFERENCES `tbl_jenjang_pendidikan` (`id_jenjang_pendidikan`);
 
 --
--- Constraints for table `tbl_pemeriksa`
+-- Ketidakleluasaan untuk tabel `tbl_pemeriksa`
 --
 ALTER TABLE `tbl_pemeriksa`
   ADD CONSTRAINT `tbl_pemeriksa_ibfk_1` FOREIGN KEY (`no_rawat`) REFERENCES `tbl_pendaftaran` (`no_rawat`),
@@ -1551,7 +1585,7 @@ ALTER TABLE `tbl_pemeriksa`
   ADD CONSTRAINT `tbl_pemeriksa_ibfk_5` FOREIGN KEY (`id_pemeriksaan_laboratorium`) REFERENCES `tbl_pemeriksaan_laboratorium` (`id_pemeriksaan_laboratorium`);
 
 --
--- Constraints for table `tbl_pemeriksaan_rawat_inap`
+-- Ketidakleluasaan untuk tabel `tbl_pemeriksaan_rawat_inap`
 --
 ALTER TABLE `tbl_pemeriksaan_rawat_inap`
   ADD CONSTRAINT `tbl_pemeriksaan_rawat_inap_ibfk_1` FOREIGN KEY (`no_rawat`) REFERENCES `tbl_pendaftaran` (`no_rawat`),
@@ -1562,7 +1596,7 @@ ALTER TABLE `tbl_pemeriksaan_rawat_inap`
   ADD CONSTRAINT `tbl_pemeriksaan_rawat_inap_ibfk_6` FOREIGN KEY (`id_tempat_tidur`) REFERENCES `tbl_tempat_tidur` (`id_tempat_tidur`);
 
 --
--- Constraints for table `tbl_pendaftaran`
+-- Ketidakleluasaan untuk tabel `tbl_pendaftaran`
 --
 ALTER TABLE `tbl_pendaftaran`
   ADD CONSTRAINT `tbl_pendaftaran_ibfk_1` FOREIGN KEY (`no_rekamedis`) REFERENCES `tbl_pasien` (`no_rekamedis`),
@@ -1570,67 +1604,73 @@ ALTER TABLE `tbl_pendaftaran`
   ADD CONSTRAINT `tbl_pendaftaran_ibfk_3` FOREIGN KEY (`id_jenis_bayar`) REFERENCES `tbl_jenis_bayar` (`id_jenis_bayar`);
 
 --
--- Constraints for table `tbl_pengadaan_detail`
+-- Ketidakleluasaan untuk tabel `tbl_pengadaan_detail`
 --
 ALTER TABLE `tbl_pengadaan_detail`
   ADD CONSTRAINT `tbl_pengadaan_detail_ibfk_1` FOREIGN KEY (`id_obat_alkes_bhp`) REFERENCES `tbl_obat_alkes_bhp` (`id_obat_alkes_bhp`),
   ADD CONSTRAINT `tbl_pengadaan_detail_ibfk_2` FOREIGN KEY (`id_pengadaan_obat_alkes_bhp`) REFERENCES `tbl_pengadaan_obat_alkes_bhp` (`id_pengadaan_obat_alkes_bhp`);
 
 --
--- Constraints for table `tbl_pengadaan_obat_alkes_bhp`
+-- Ketidakleluasaan untuk tabel `tbl_pengadaan_obat_alkes_bhp`
 --
 ALTER TABLE `tbl_pengadaan_obat_alkes_bhp`
   ADD CONSTRAINT `tbl_pengadaan_obat_alkes_bhp_ibfk_1` FOREIGN KEY (`id_supplier`) REFERENCES `tbl_supplier` (`id_supplier`);
 
 --
--- Constraints for table `tbl_penjualan_detail`
+-- Ketidakleluasaan untuk tabel `tbl_penjualan_detail`
 --
 ALTER TABLE `tbl_penjualan_detail`
   ADD CONSTRAINT `tbl_penjualan_detail_ibfk_1` FOREIGN KEY (`id_obat_alkes_bhp`) REFERENCES `tbl_obat_alkes_bhp` (`id_obat_alkes_bhp`),
   ADD CONSTRAINT `tbl_penjualan_detail_ibfk_2` FOREIGN KEY (`id_penjualan_obat_alkes_bhp`) REFERENCES `tbl_penjualan_obat_alkes_bhp` (`id_penjualan_obat_alkes_bhp`);
 
 --
--- Constraints for table `tbl_rawat_inap`
+-- Ketidakleluasaan untuk tabel `tbl_rawat_inap`
 --
 ALTER TABLE `tbl_rawat_inap`
   ADD CONSTRAINT `tbl_rawat_inap_ibfk_1` FOREIGN KEY (`id_ruang_rawat_inap`) REFERENCES `tbl_ruang_rawat_inap` (`id_ruang_rawat_inap`);
 
 --
--- Constraints for table `tbl_riwayat_pemberian_obat`
+-- Ketidakleluasaan untuk tabel `tbl_riwayat_pemberian_obat`
 --
 ALTER TABLE `tbl_riwayat_pemberian_obat`
   ADD CONSTRAINT `tbl_riwayat_pemberian_obat_ibfk_1` FOREIGN KEY (`no_rawat`) REFERENCES `tbl_pendaftaran` (`no_rawat`),
   ADD CONSTRAINT `tbl_riwayat_pemberian_obat_ibfk_2` FOREIGN KEY (`id_obat_alkes_bhp`) REFERENCES `tbl_obat_alkes_bhp` (`id_obat_alkes_bhp`);
 
 --
--- Constraints for table `tbl_riwayat_pemeriksaan_laboratorium`
+-- Ketidakleluasaan untuk tabel `tbl_riwayat_pemeriksaan_laboratorium`
 --
 ALTER TABLE `tbl_riwayat_pemeriksaan_laboratorium`
   ADD CONSTRAINT `tbl_riwayat_pemeriksaan_laboratorium_ibfk_1` FOREIGN KEY (`id_pemeriksaan_laboratorium`) REFERENCES `tbl_pemeriksaan_laboratorium` (`id_pemeriksaan_laboratorium`),
   ADD CONSTRAINT `tbl_riwayat_pemeriksaan_laboratorium_ibfk_2` FOREIGN KEY (`no_rawat`) REFERENCES `tbl_pendaftaran` (`no_rawat`);
 
 --
--- Constraints for table `tbl_riwayat_tindakan`
+-- Ketidakleluasaan untuk tabel `tbl_riwayat_pemeriksaan_pasien`
+--
+ALTER TABLE `tbl_riwayat_pemeriksaan_pasien`
+  ADD CONSTRAINT `FK_tbl_riwayat_pemeriksaan_pasien_tbl_pendaftaran` FOREIGN KEY (`no_rawat`) REFERENCES `tbl_pendaftaran` (`no_rawat`);
+
+--
+-- Ketidakleluasaan untuk tabel `tbl_riwayat_tindakan`
 --
 ALTER TABLE `tbl_riwayat_tindakan`
   ADD CONSTRAINT `tbl_riwayat_tindakan_ibfk_1` FOREIGN KEY (`id_tindakan`) REFERENCES `tbl_tindakan` (`id_tindakan`),
   ADD CONSTRAINT `tbl_riwayat_tindakan_ibfk_2` FOREIGN KEY (`no_rawat`) REFERENCES `tbl_pendaftaran` (`no_rawat`);
 
 --
--- Constraints for table `tbl_ruang_rawat_inap`
+-- Ketidakleluasaan untuk tabel `tbl_ruang_rawat_inap`
 --
 ALTER TABLE `tbl_ruang_rawat_inap`
   ADD CONSTRAINT `tbl_ruang_rawat_inap_ibfk_1` FOREIGN KEY (`id_gedung`) REFERENCES `tbl_gedung` (`id_gedung`);
 
 --
--- Constraints for table `tbl_tindakan`
+-- Ketidakleluasaan untuk tabel `tbl_tindakan`
 --
 ALTER TABLE `tbl_tindakan`
   ADD CONSTRAINT `tbl_tindakan_ibfk_1` FOREIGN KEY (`id_poliklinik`) REFERENCES `tbl_poliklinik` (`id_poliklinik`),
   ADD CONSTRAINT `tbl_tindakan_ibfk_2` FOREIGN KEY (`id_kategori_tindakan`) REFERENCES `tbl_kategori_tindakan` (`id_kategori_tindakan`);
 
 --
--- Constraints for table `tbl_user`
+-- Ketidakleluasaan untuk tabel `tbl_user`
 --
 ALTER TABLE `tbl_user`
   ADD CONSTRAINT `tbl_user_ibfk_1` FOREIGN KEY (`id_user_level`) REFERENCES `tbl_user_level` (`id_user_level`);

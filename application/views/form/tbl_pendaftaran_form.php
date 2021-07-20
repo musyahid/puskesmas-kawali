@@ -74,6 +74,14 @@
 <table class='table table-bordered>'        
 
 	    <tr><td width='200'>No Rekamedis <?php echo form_error('no_rekamedis') ?></td><td><input type="text" class="form-control" name="no_rekamedis"  onkeyup="autocomplate_norekamedis()" id="no_rekamedis" placeholder="No Rekamedis" value="<?php echo $no_rekamedis; ?>" /></td></tr>
+		<tr><td></td><td>
+		
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalDataPasien">
+		Lihat Data Pasien
+		</button>
+			</td></tr>
+		
 
 	    <tr><td>Nama Pasien</td><td>
 	    	
@@ -198,6 +206,57 @@
 							<td><?php echo $datainap->kelas?></td>
 							<td><?php echo $datainap->tarif?></td>
 							<td><?php echo $datainap->status?></td>
+						</tr>
+
+						<?php }?>
+						
+					</tbody>
+					
+				</table>
+
+
+				<div class="modal-footer">
+       			 <button type="button" class="btn btn-primary" data-dismiss="modal">Tutup</button>
+       
+      			</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+<div class="modal fade" id="modalDataPasien">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title">Tampil Data</h4>
+			</div>
+			<div class="modal-body table-responsive">
+				<table class="table table-bordered table-striped" id="table">
+					<thead>
+						<tr>
+							 <td>Nomor Rekamedis</td>
+            				 <td>Nama Pasien</td>
+		    				 <td>Jenis Kelamin</td>
+		                     <td>Golongan Darah</td>
+		                     <td>Tempat Lahir</td>
+		                     <td>Tanggal Lahir</td>
+		                     <td>Nomor HP</td>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach ($data_pasien as $data){?>
+							<tr>
+							<td><?php echo $data->no_rekamedis?></td>
+							<td><?php echo $data->nama_pasien?></td>
+							<td><?php echo $data->jenis_kelamin?></td>
+							<td><?php echo $data->golongan_darah?></td>
+							<td><?php echo $data->tempat_lahir?></td>
+							<td><?php echo $data->tanggal_lahir?></td>
+							<td><?php echo $data->no_hp?></td>
 						</tr>
 
 						<?php }?>

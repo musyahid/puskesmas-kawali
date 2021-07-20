@@ -26,6 +26,7 @@
             <!-- Button Input -->
             <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#inputPemeriksaan">Input pemeriksaan laboratorium</button>
             <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#inputDiagnosa">Input diagnosa</button>
+            <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#inputPemeriksaanPasien">Input Pemeriksaan Pasien</button>
   
 
             <!-- Modal Input Tindakan-->
@@ -87,14 +88,27 @@
                         </div>
                         <?php echo form_open('form/beriobat_action'); ?>
                         <div class="modal-body">
+                        <button type="button" id="btn2" class="btn btn-primary" > + Tambah Obat</button>
                             <input value="<?php echo $no_rawat; ?>" type="hidden" name="no_rawat">
                             <table class="table table-bordered">
                                 <tr>
                                 <td>Nama Obat</td>
-                                <td><?php echo cmb_dinamis('nama_obat', 'tbl_obat_alkes_bhp','nama_barang','nama_barang');?></td>
+                                <td>
+                                    <select name="nama_obat[]" id="nama_obat" class="form-control" onchange="autocomplate_data_obat()">
+                                      <option value="">-PILIH-</option>
+                                      <?php foreach ($data_obat as $data) { ?>
+                                      <option value="<?= $data->nama_barang ?>"><?= $data->nama_barang ?></option>
+                                      <?php } ?>
+                                    </select>
+                                </td>
                                 </tr>
+                                <tr><td>Satuan Obat</td><td><input type="text"  placeholder="Satuan Obat" class="form-control satuan_obat" readonly></td></tr>
                                 <tr><td>Qty</td><td><input type="number" name="qty" placeholder="Qty" class="form-control"></td></tr>
-                            </table>
+                                <tr><td>Dosis</td><td><input type="text" name="dosis" placeholder="Dosis" class="form-control"></td></tr>
+                            </table>    
+                        </div>
+                        <div class="modal-body">
+                        <div class="add-obat"></div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -190,6 +204,35 @@
                     </form>
 
                 </div>
+            </div>
+
+            <!-- Modal Input Pemeriksaan Pasien -->
+            <div class="modal fade" id="inputPemeriksaanPasien" aria-labelledby="myModalLabel">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Input Tindakan</h4>
+                  </div>
+                  <div class="modal-body">
+
+                    <?php echo form_open('form/create_pemeriksaan_pasien')?>
+
+                    <table class="table table-bordered">
+                      <input value="<?php echo $no_rawat?>"    type="hidden" name="no_rawat">
+                      </tr>
+                      <tr><td>Berat Badan *<span class="label label-danger">Kilogram</span></td><td><input type="number" required name="berat_badan" placeholder="Masukan Berat Badan" class="form-control"></td></tr>
+                      <tr><td>Tensi Darah *<span class="label label-danger">mmHg</span></td><td><input type="text" required name="tensi_darah" placeholder="Masukan Tensi Darah" class="form-control"></td></tr>
+                      <tr><td>Suhu Badan *<span class="label label-danger">Celsius</span></td><td><input type="number" required name="suhu_badan" placeholder="Masukan Suhu Badan" class="form-control"></td></tr>
+                    </table>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                    <button type="submit" class="btn btn-primary">Simpan Data</button>
+                  </div>
+                </form>
+                </div>
+              </div>
             </div>
               
             </div>
@@ -354,6 +397,43 @@
             <!-- /.box-body -->
           </div>
 
+          <div class="box box-warning box-solid">
+            <div class="box-header with-border">
+              <h3 class="box-title">RIWAYAT PEMERIKSAAN PASIEN </h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="datatables_pemeriksaan_pasien" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>No</th>
+                  <th>BERAT BADAN</th>
+                  <th>TENSI DARAH</th>
+                  <th>SUHU BADAN</th>
+                  <th>Tanggal</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                  $no = 1;
+                  foreach ($riwayat_pemeriksaan_pasien as $dp) {
+                    echo "<tr>
+                                    <td>$no</td>
+                                    <td>$dp->berat_badan</td>
+                                    <td>$dp->tensi_darah</td>
+                                    <td>$dp->suhu_badan</td>
+                                    <td>$dp->tanggal</td></tr>";
+                    $no++;
+
+                  }
+                  ?>
+                </tbody>
+
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+
     </section>
 
 </div>
@@ -464,3 +544,51 @@
 
 </script>
 
+<script>
+        $(document).ready(function(){
+        $("#btn2").click(function(){
+          
+            $('.add-obat').append(
+            '<table class="table table-bordered">' +
+            '<tr>' +
+            '<td>Nama Obat</td>' +
+            '<td><select name="nama_obat[]" id="nama_obat" class="form-control" onchange="autocomplate_data_obat()">' +
+            '<option value="">-PILIH-</option>' +
+            '<?php foreach ($data_obat as $data) { ?>' +
+            '<option value="<?= $data->nama_barang; ?>"><?= $data->nama_barang; ?> </option>' +
+            '<?php } ?>' +
+            '</select></td>' +
+            '<tr><td>Satuan Obat</td><td><input type="text"  placeholder="Satuan Obat" class="form-control satuan_obat" readonly></td></tr>' +
+            '<tr><td>Qty</td><td><input type="number" name="qty" placeholder="Qty" class="form-control"></td></tr>' +
+            '<tr><td>Dosis</td><td><input type="text" name="dosis" placeholder="Dosis" class="form-control"></td></tr>' +
+            '</table>'
+            );
+        });
+        });
+
+    	function autocomplate_data_obat(){
+        $(function() {
+  
+        //autocomplete
+            $("#nama_obat").autocomplete({
+                source: "<?php echo base_url()?>index.php/form/autocomplate_data_obat",
+                minLength: 1
+            });
+        });
+        autoFill();
+
+        }
+
+      function autoFill(){
+        var nama_obat = $("#nama_obat").val();
+            $.ajax({
+                url: "<?php echo base_url() ?>index.php/form/autoFillObat",
+                data:"nama_obat="+nama_obat ,
+            }).success(function (data) {
+                var json = data,
+                obj = JSON.parse(json);
+          console.log(obj)
+                $('.satuan_obat').val(obj.nama_satuan);
+            });
+      }
+</script>
